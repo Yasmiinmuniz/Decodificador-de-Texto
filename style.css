@@ -15,16 +15,16 @@
     
     --social-media-color: invert(0);
     --is-icon-black: invert(0);
-    --is-icon-black-hover: (0);
-    --is-icon-white: invert(0);
-    --is-icon-white-hover: invert(1);
+    --is-icon-black-hover: invert(1);
+    --is-icon-white: invert(1);
+    --is-icon-white-hover: invert(0);
 
 
     --button-encrypt-background-color: #B163C8;
     --button-encrypt-border-color: #B163C8;
     --button-encrypt-font-color: #FFFFFF; 
     --button-descrypt-background-color: #F38AEA;
-    --button-descrypt-font-color: #000000;
+    --button-descrypt-font-color: #FFFFFF;
 
     --button-toggle-background-color: #FDFDFD;
     --body-background-color: #E2E2E2;
@@ -38,7 +38,7 @@
     --warning-text-color: #383E43;
     --main-link-color: #000000;
     
-    --button-encrypt-background-color-hover: #AA7DB2;
+    --button-encrypt-background-color-hover: #B163C8;
     --button-descrypy-background-color-hover: #F38AEA;
     --aside-display-border-color-hover: #B163C8;
     --button-copy-background-color-hover: #B163C8;
@@ -129,7 +129,7 @@ body {
     cursor: pointer;
 }
 
-.main__avatar:hover .main__wrapper-menu {
+.main_avatar:hover .main_wrapper-menu {
     opacity: 1;
     animation: increase-height .5s linear backwards;
 }
@@ -323,6 +323,18 @@ body {
 
 .is-encrypt:hover {
     background-color: var(--button-encrypt-background-color-hover);
+    color: var(--button-descrypt-font-color-hover);
+}
+
+
+.is-encrypt:hover .is-icon-black {
+    filter: var(--is-icon-black-hover);
+}
+
+.is-descrypt {
+    background-color: var(--button-descrypt-background-color);
+    border: 0.1rem solid var(--button-descrypt-background-color);
+    color: var(--button-descrypt-font-color);
 }
 
 .is-descrypt:hover {
@@ -330,38 +342,33 @@ body {
     color: var(--button-descrypt-font-color-hover);
 }
 
-.is-descrypt {
-    background-color: var(--button-descrypt-background-color);
-    border: 0.1rem solid var(--button-encrypt-border-color);
-    color: var(--button-descrypt-font-color);
+.is-descrypt:hover .is-icon-white {
+    filter: var(--is-icon-white-hover);
 }
 
+/* Estilos adicionais */
 .is-icon-black {
     filter: var(--is-icon-black);
-}
-
-.dark .is-descrypt:hover .is-icon-black {
-    filter: var(--is-icon-black-hover);
-    
-}
-
-.is-icon-black:hover:not(.is-moon) {
-    filter: var(--is-icon-black-hover);
-    
 }
 
 .is-icon-white {
     filter: var(--is-icon-white);
 }
 
+.dark .is-encrypt:hover .is-icon-black {
+    filter: var(--is-icon-white);
+}
+
+.is-icon-black:hover:not(.is-moon) {
+    filter: var(--is-icon-black-hover);
+}
+
 .dark .is-descrypt:hover .is-icon-white {
     filter: var(--is-icon-white-hover);
-    
 }
 
 .is-icon-white:hover:not(.is-moon) {
     filter: var(--is-icon-white-hover);
-    
 }
 
 
@@ -385,7 +392,7 @@ body {
     position: absolute;
 }
 
-.aside__checkbox:checked + .aside__button-toggle .aside__circle {
+.aside_checkbox:checked + .asidebutton-toggle .aside_circle {
     transform: translateX(0%);
 }
 
